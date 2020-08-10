@@ -1,14 +1,37 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/category/category",
+    "pages/detail/detail"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#6600FF",
+    "navigationBarTitleText": "小镇故事",
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#9BABBA",
+    "selectedColor": "#6600FF",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tar-home.png",
+        "selectedIconPath": "images/tar-home-on.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "images/tar-category.png",
+        "selectedIconPath": "images/tar-category-on.png"
+      }
+    ]
+  }
 }

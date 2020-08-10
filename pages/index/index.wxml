@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<!--
 <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
@@ -11,3 +12,19 @@
     <text class="user-motto">{{motto}}</text>
   </view>
 </view>
+-->
+<view class="index-header" style="display:{{displaySwiper}}">
+  <swiper class="index-swiper" circular="true" indicator-dots="false" indicator-color="rgba(0,0,0,.3)" indicator-active-color="#6600FF" autoplay="false" current="0" current-item-id="" interval="3000" duration="1000">
+  <block wx:key="id" wx:for="{{postsShowSwiperList}}">
+    <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail">
+      <image mode="aspectFill" src="{{item.post_medium_image}}" />
+      <view class="swiper-desc">
+        <text>{{item.post_title}}</text>
+      </view>
+    </swiper-item>
+  </block>
+    
+  </swiper>
+</view>
+  
+  

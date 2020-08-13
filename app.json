@@ -1,9 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/topic/topic",
     "pages/category/category",
-    "pages/detail/detail"
+    "pages/logs/logs",
+    "pages/detail/detail",
+    "pages/list/list",
+    "pages/hot/hot"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -31,6 +34,12 @@
         "text": "分类",
         "iconPath": "images/tar-category.png",
         "selectedIconPath": "images/tar-category-on.png"
+      },
+      {
+        "pagePath": "pages/topic/topic",
+        "text": "推荐",
+        "iconPath": "images/tar-topic.png",
+        "selectedIconPath": "images/tar-topic-on.png"
       }
     ]
   }

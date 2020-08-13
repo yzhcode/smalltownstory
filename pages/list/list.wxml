@@ -1,0 +1,33 @@
+<!--pages/list/list.wxml-->
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+<view class="banner" style="display:{{isCategoryPage}}">
+  <image mode="aspectFill" src="{{categoriesImage}}" />
+  <view class="banner-title">
+    <text>{{categoriesList.name}}</text>
+  </view>
+  <view class="banner-desc">
+    <text>{{categoriesList.description}}</text>
+  </view>
+</view>
+<view class="banner" style="display:{{isSearchPage}}">
+  <image mode="aspectFill" src="../../images/website-search.png" />
+  <view class="banner-title">
+    <text>搜索关键字：{{searchKey}}</text>
+  </view>
+  <view class="banner-desc">
+    <text>本搜索是全文搜索</text>
+  </view>
+</view>
+
+<view class="container">
+  <view class="list-container">
+    <template is="tCommonList" data="{{postsList}}"></template>
+    <view class="loadingmore">
+      <view class="no-more">---已到了世界的尽头---</view>
+    </view>
+    <view class="copyright">
+      <template is="tCopyright"></template>
+    </view>
+  </view>
+</view>

@@ -1,2 +1,29 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<import src="../../templates/copyright.wxml" />
+<view class="category-common-list">
+  <block wx:key="id" wx:for="{{categoriesList}}">
+    <view class="list-item" data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex">
+      <view>
+        <image src="{{item.category_thumbnail_image}}" class="list-item-image"></image>
+      </view>
+      <view class="list-item-category">
+        <view class="category-title">
+          <text>{{item.name}}</text>
+        </view>
+        <view>
+          <image class="category-image" src="../../images/{{item.subimg}}" data-subflag="{{item.subflag}}" data-id="{{item.id}}" catchtap="postsub"></image>
+        </view>
+      </view>
+      <view class="list-item-desc" data-item="{{item.name}}" data-id="{{item.id}}">
+        <text>{{item.description}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+<!--
+ <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+-->
+<view class="copyright">
+  <template is="tCopyright" />
+</view>

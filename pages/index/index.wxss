@@ -1,8 +1,8 @@
+@import "../../templates/common-list.wxss";
 .index-header {
   text-align: center;
   font-size: 30rpx;
   line-height: 40rpx;
-  color: #ff0000;
 }
 .index-header .index-swiper {
   position: relative;
@@ -29,4 +29,107 @@
   text-overflow: ellipsis;
   font-size: 30rpx;
   text-shadow: 0px 0px 16px #646d75;
+}
+.search-pancel {
+  display: flex;
+  flex-direction: row;
+  background-color: #eee;
+  padding: 24rpx 24rpx;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.search-form {
+  position: relative;
+  display: block;
+  height: 80rpx;
+  width: 100%;
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+  background-color: #eee;
+}
+.search-form .search-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  background-color: #fff;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  border-radius: 8rpx;
+}
+.search-form .search-panel .search-input {
+  flex: 1;
+  padding-left: 20rpx;
+  vertical-align: middle;
+}
+.search-form .search-panel .search-button {
+  background-color: transparent;
+  width: 20%;
+  vertical-align: middle;
+  line-height: 20rpx;
+}
+.search-form .search-panel .search-button .search-icon {
+  vertical-align: middle;
+}
+.top-nav {
+  display: flex;
+  padding: 24rpx 0;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  /* border-bottom: 1px solid #eee; */
+}
+.top-nav .top-nav-item {
+  text-align: center;
+  min-width: 0;
+}
+.top-nav .top-nav-item .top-nav-image {
+  width: 88rpx;
+  height: 88rpx;
+}
+.top-nav .top-nav-item .top-nav-text {
+  line-height: 20rpx;
+  font-size: 28rpx;
+  color: #4c4c4c;
+  font-weight: 500;
+}
+.top-nav2 {
+  display: flex;
+  padding: 24rpx 0;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  border-bottom: 20rpx solid #eee;
+}
+.top-nav2 .top-nav2-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 160rpx;
+  border-radius: 8rpx;
+  background-size: 100%;
+}
+.top-nav2 .top-nav2-item .top-nav2-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  height: 60rpx;
+  width: 55%;
+  background-color: #fff;
+  border-radius: 30rpx;
+  border: 1rpx #c4c4c4 solid;
+}
+.top-nav2 .top-nav2-item:first-child {
+  background-image: url(http://wx2.sinaimg.cn/mw690/d0cdcf72gy1fxkemocghrj209f04gmx2.jpg);
+}
+.top-nav2 .top-nav2-item:last-child {
+  background-image: url(http://wx2.sinaimg.cn/mw690/d0cdcf72gy1fxkemkkrkbj209f04g3yp.jpg);
+}
+.index-container {
+  background-color: transparent;
 }

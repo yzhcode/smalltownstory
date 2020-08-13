@@ -13,6 +13,10 @@
   </view>
 </view>
 -->
+
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+
 <view class="index-header" style="display:{{displaySwiper}}">
   <swiper class="index-swiper" circular="true" indicator-dots="false" indicator-color="rgba(0,0,0,.3)" indicator-active-color="#6600FF" autoplay="false" current="0" current-item-id="" interval="3000" duration="1000">
   <block wx:key="id" wx:for="{{postsShowSwiperList}}">
@@ -23,8 +27,59 @@
       </view>
     </swiper-item>
   </block>
-    
   </swiper>
+</view>
+
+<form class="search-form" catchsubmit="formSubmit" catchreset="formReset" id="search-form">
+<view class="search-panel">
+  <input id="search-input" class="search-input" name="input" value="" type="text" placeholder="搜索你感兴趣的内容..." bindconfirm="formSubmit">
+  </input>
+  <button class="search-button" form-type="submit">
+    <icon class="search-icon" type="search" color="#959595" size="16">
+    </icon>
+  </button>
+</view>
+</form>
+
+
+<view class="top-nav">
+  <block wx:key="id" wx:for="{{topNav}}">
+    <view class="top-nav-item" catchtap="onNavRedirect" id="{{item.id}}" data-redicttype="{{item.redirecttype}}" data-url="{{item.url}}" data-appid="{{item.appid}}" data-extraData="{{item.extraData}}">
+      <view>
+        <image class="top-nav-image" mode="aspectFit" src="{{item.image}}"></image>
+      </view>
+      <view>
+        <text class="top-nav-text">{{item.name}}</text>
+      </view>
+    </view>
+  </block>
+    
+</view>
+
+<view class="top-nav2">
+  <view class="top-nav2-item" data-url="../hot/hot" bindtap="redictUrl">
+    <view class="top-nav2-text">
+      <text>排行榜单</text>
+    </view>
+      
+  </view>
+  <view class="top-nav2-item" data-url="../list/list?categoryID=32" bindtap="redictUrl">
+    <view class="top-nav2-text">
+      <text>摄影推荐</text>
+    </view>
+  </view>
+</view>
+  
+<view class="container">
+  <view class="index-container">
+    <template is="tCommonList" data="{{postsList}}"></template>
+    <view class="loadingmore">
+      <view class="no-more">---已到了世界的尽头---</view>
+    </view>
+    <view class="copyright">
+      <template is="tCopyright"></template>
+    </view>
+  </view>
 </view>
   
   

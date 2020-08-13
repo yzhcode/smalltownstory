@@ -1,0 +1,22 @@
+<!--pages/topic/topic.wxml-->
+<import src="../../templates/copyright.wxml" />
+<view class="topic-common-list">
+  <block wx:key="id" wx:for="{{postsList}}">
+    <view class="list-item" data-item="{{item.typename}}" id="{{item.id}}" bindtap="redictDetail">
+      <image src="{{item.post_medium2_image}}" class="list-item-image"></image>
+      <view class="item-category">
+        <text>{{item.typename}}</text>
+      </view>
+      <view class="item-title">
+        <text>{{item.title.rendered}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+<!--
+ <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+-->
+<view class="copyright">
+  <template is="tCopyright" />
+</view>

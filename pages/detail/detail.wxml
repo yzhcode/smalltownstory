@@ -1,2 +1,103 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml {{pageid}}</text>
+
+<import src="../../templates/copyright.wxml" />
+<import src="../../lib/wxParse/wxParse.wxml" />
+
+<view class="detail-container">
+  <view class="article-container">
+    <view class="article-title">
+      {{detail.title.rendered}}
+    </view>
+    <view class="article-info">
+      <image src="../../images/category.png"></image>
+      <text>{{detail.category_name}}</text>
+      <image src="../../images/pageviews.png"></image>
+      <text class="">{{detail.pageviews}}</text>
+      <image src="../../images/home-like.png"></image>
+      <text class="">{{likeCount}}</text>
+      <image src="../../images/comments.png"></image>
+      <text class="">{{total_comments}}</text>
+      <image src="../../images/calendar.png"></image>
+      <text class="">{{detailDate}}</text>
+    </view>
+    <view class="article-detail">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+
+  </view>
+
+  <view class="favorite-container">
+    <view class="favorite-detail" catchtap="onNavRedirect" id="{{item.id}}" data-redicttype="{{item.redirecttype}}" data-url="{{item.url}}" data-appid="{{item.appid}}" data-extraData="{{item.extraData}}">
+      <view class="favorite-text">
+        <text>喜欢收藏</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-container">
+    <view wx:if="{{detail.article_next.id}}" class="page-nav-previous">
+      <navigator url="../detail/detail?id={{detail.article_next.id}}" open-type="redirect" hover-class="relatedNavigator">←{{detail.article_prev.title}}</navigator>
+    </view>
+    <view wx:if="{{detail.article_next.id}}" class="page-nav-next">
+      <navigator url="../detail/detail?id={{detail.article_next.id}}" open-type="redirect" hover-class="relatedNavigator">{{detail.article_next.title}}→</navigator>
+    </view>
+    <view style="clear: both"></view>
+      
+  </view>
+
+  <view class="seg-contain maybe-like-container">
+    <view class="seg-title">
+      <text>猜你喜欢</text>
+    </view>
+    <view class="maybe-like-list">
+      <block wx:key="id" wx:for="{{postList}}">
+        <navigator url="../detail/detail?id={{item.id}}" open-type="redirect" hover-class="relatedNavigator">{{index+1}}.{{item.title}}</navigator>
+      </block>
+    </view>
+  </view>
+
+  <view class="seg-contain sure-like-container">
+    <view class="seg-title">
+      <text>点赞</text>
+    </view>
+    <view class="sure-like-list">
+      <view class="like-statistics">
+        <view class="like-count">
+          <text>{{likeCount}}人已赞</text>
+        </view>
+        <view class="like-image">
+          <image src="../../images/like-on.png" class="img-like" id="liketop" catchtap="clickLike"></image>
+        </view>
+      </view>
+        
+      
+      <view class="like-list">
+        <block wx:key="id" wx:for="{{likeList}}">
+          <image src="{{item}}"></image>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="seg-contain comment-container">
+    <view class="seg-title">
+      <text>评论交流</text>
+    </view>
+    <view class="comment-count">
+      <text>{{commentCount}}</text>
+    </view>
+    <block wx:key="id" wx:for="{{commentsList}}">
+      <view class="comment-item" bindtap="replay" data-id="{{item.id}}" data-name="{{item.author_name}}" data-userid="{{item.userid}}" data-formId="{{item.formId}}" data-commentdate="{{item.date}}">
+        <view class="comment-user">
+          <image src="{{item.author_url}}" class="user-image"></image>
+          <text class="user-name">{{item.author_name}}</text>
+          <text class="user-time">{{item.pubdate}}</text>
+        </view>
+        <view class="comment-text" bindtap="replay" data-id="{{item.id}}" data-name="{{item.author_name}}" data-userid="{{item.userid}}" data-formId="{{item.formId}}" data-commentdate="{{item.date}}"> 
+          <text>{{item.content}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>

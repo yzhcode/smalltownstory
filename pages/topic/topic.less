@@ -1,0 +1,49 @@
+.topic-common-list {
+  padding: 24rpx; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .list-item {
+    position: relative;
+    width: 100%;
+    height: 400rpx;
+    margin-bottom: 24rpx;
+    .list-item-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8rpx;
+    }
+    .item-category {
+      position: absolute;
+      top: 20rpx;
+      left: 20rpx;
+      width: 20%;
+      background: rgba(73, 175, 0, 0.49);
+      font-size: 30rpx;
+      border-radius: 8rpx;
+      text-align: center;
+      text {
+        line-height: 50rpx;
+        height: 50rpx;
+        vertical-align: center;
+        color: #fff;
+      }
+    }
+    .item-title {
+      position: absolute;
+      bottom: 20rpx;
+      left: 20rpx;
+      right: 20rpx;
+      font-size: 35rpx;
+      border-radius: 8rpx;
+      text {
+        vertical-align: center;
+        color: #fff;
+      }
+    }
+  }
+}

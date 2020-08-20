@@ -99,5 +99,45 @@
       </view>
     </block>
   </view>
+</view>
 
+<view class="comment-fixed">
+  <form catchsubmit="formSubmit" report-submit="true">
+    <view class="comment-respond">
+      <input name="inputPostID" value="{{detail.id}}" style="display:none" />
+      <input name="inputPostTitle" value="{{detail.title.rendered}}" style="display:none" />
+      <input name="inputPosttypeid" value="{{detail.typeid}}" style="display:none" />
+      <view class="comment-box">
+        <image class="trim-image" src="../../images/entry-home.png" catchtap="goHome"></image>
+        <input class="comment-input" type='text' confirm-type="send" cursor-spacing="10" maxlength="100" name="inputComment" value="{{content}}" placeholder="{{placeholder}}" focus="{{focus}}" bindblur="onReplyBlur" bindfocus="onRepleyFocus" />
+        <button class="comment-button" formType="submit">发送</button>
+        <image class="trim-image" src="../../images/plus.png" catchtap="ShowHideMenu"></image>
+      </view>
+      <!--功能图标
+      //  {{isShow ? 'emoji-move-in' : 'emoji-move-out'}} {{isLoad ? 'no-emoji-move' : ''}}
+      -->
+      <view class="icon-list {{isShow ? 'emoji-move-in' : 'emoji-move-out'}}">
+        <button class="icon-item" open-type="share">
+          <image src="../../images/forwarding.png"></image>
+          <text>转发</text>
+        </button>
+        <button class="icon-item" catchtap="onCreatePoster">
+          <image src="../../images/poster.png" ></image>
+          <text>海报</text>
+        </button>
+        <button class="icon-item" catchtap="gotowebpage">
+          <image src="../../images/copy.png" ></image>
+          <text>阅读原文</text>
+        </button>
+        <button class="icon-item" catchtap="clickLike">
+          <image src="../../images/{{likeImag}}"  id="likebottom"></image>
+          <text>点赞</text>
+        </button>
+        <button class="icon-item" catchtap="praise">
+          <image src="../../images/appreciation.png" ></image>
+          <text>鼓励</text>
+        </button>
+      </view>
+    </view>
+  </form>
 </view>

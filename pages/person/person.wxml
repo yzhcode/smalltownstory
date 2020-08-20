@@ -1,0 +1,50 @@
+<!--pages/person/person.wxml-->
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+<view class="banner">
+  <block wx:if="{{hadAuth}}">
+    <view class='user-info'>
+      <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user-desc">
+        <view class="user-name"><text>{{userInfo.nickName}}</text></view>
+        <view class="user-other">
+          <view class="user-type"><text>角色 | {{userLevel.levelName}}</text></view>
+          <button class="user-update" open-type="getUserInfo" bindgetuserinfo="userAuthorization">
+            <image src="../../images/refresh.png"></image> 
+            <text>更新信息</text>
+          </button>
+        </view>
+      </view>
+    </view>
+    <image catchtap="userLogout" class="user-logout" src="../../images/exit.png"></image>
+  </block>
+  <block wx:else>
+    <button class="user-login" open-type="getUserInfo" bindgetuserinfo="userAuthorization">
+      <text>点击登录</text>
+    </button>
+  </block>
+  
+</view>
+<view class="top-bar">
+  <block wx:for="{{topBarItems}}" wx:key="id">
+    <view class="top-bar-item {{item.selected ? 'top-bar-item-selected': '' }}" catchtap="onTapTag" id="{{item.id}}">{{item.name}}</view>
+  </block>
+</view>
+<view class="container">
+  <view class="list-container">
+    <view class="log-list">
+      <block wx:key="id" wx:for="{{readLogs}}">
+        <view class="log-items" index="{{index}}" id="{{item[0]}}" data-itemtype="{{item[2]}}" catchtap="redictDetail">
+          <text class="log-text">{{index + 1}}. {{item[1]}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="loadingmore">
+      <view class="no-more">---已到了世界的尽头---</view>
+    </view>
+    <view class="copyright">
+      <template is="tCopyright"></template>
+    </view>
+  </view>
+</view>
+

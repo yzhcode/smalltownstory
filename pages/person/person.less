@@ -1,0 +1,129 @@
+.list-container {
+  background-color: transparent;
+}
+.banner {
+  position: relative;
+  height: 348rpx;
+  background-color: #6600FF;
+  .user-login {
+    position: absolute;
+    top: 50%;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-top: -50rpx;
+
+    left: 50%;
+    width: 50%;
+    margin-left: -25%;
+
+    text {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  .user-info {
+    position: absolute;
+    top: 50%;
+    height: 148rpx;
+    margin-top: -74rpx;
+    display: flex;
+    flex-flow: center;
+    color: #fff;
+    .user-image {
+      width: 148rpx;
+      height: 100%;
+      margin-left: 48rpx;
+    }
+    .user-desc {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 40rpx;
+      .user-name {
+        font-size: 50rpx;
+        height: 65rpx;
+        line-height: 65rpx;
+      }
+      .user-other {
+        display: flex;
+        height: 45rpx;
+        line-height: 45rpx;
+        .user-type {
+          height: 100%;
+          font-size: 30rpx;
+        }
+        .user-update {
+          display: flex;
+          flex-flow: center;
+          flex-direction: row;
+          justify-content: flex-start;
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          font-size: 30rpx;
+          width: 300rpx;
+          color: rgba(255, 255, 255, 0.5);
+          background-color: transparent;
+          text {
+            height: 100%;
+          }
+          image {
+            height: 45rpx;
+            width: 45rpx;
+            margin-left: 20rpx;
+          }
+        }
+      }
+    }
+  }
+  
+  .user-logout {
+    position: absolute;
+    top: 20rpx;
+    right: 30rpx;
+    width: 40rpx;
+    height: 40rpx;
+  }
+}
+.list-container {
+  background-color: transparent;
+  .log-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .log-items {
+    margin-top: 20rpx;
+    .log-text {
+      font-size: 30rpx;
+      font-weight: 500;
+      color: #777;
+      text-align: left;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+  }
+}
+.top-bar {
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  .top-bar-item {
+    flex: 1;
+    height: 100%;
+    vertical-align: center;
+    color: #999;
+    font-size: 30rpx;
+    text-align: center;
+  }
+  .top-bar-item-selected {
+    color: #6600FF;
+    border-bottom: 4rpx solid #6600FF;
+  }
+}
+

@@ -1,0 +1,8 @@
+<!--/*
+ * 
+ * 织梦版微信小程序
+ * author: 鹏厄
+ * 小镇故事66UI.com
+ * 
+ */-->
+<web-view src="{{url}}"></web-view>
